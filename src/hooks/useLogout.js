@@ -8,12 +8,15 @@ const useLogout = () => {
 
   const logout = async () => {
     try {
-      const res = await fetch(`http://localhost:5000/api/users/logout`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const res = await fetch(
+        `https://xenonstack-assignment-backend.onrender.com/api/users/logout`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       const data = await res.json();
 
       if (data.error) {
